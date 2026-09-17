@@ -24,7 +24,9 @@ const Register = () => {
           await register(formData);
           navigate('/login')
         }catch(error){
-            console.error("MESSAGE:", error.message);
+          console.log("STATUS:", error.response?.status);
+          console.log("DATA:", error.response?.data);
+          console.error("MESSAGE:", error.message);
         }finally{
           setLoading(false)
         }
