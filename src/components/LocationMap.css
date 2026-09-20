@@ -1,0 +1,55 @@
+.location-map-card {
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
+  overflow: hidden;
+}
+
+.location-map-container {
+  height: 320px;
+  width: 100%;
+}
+
+.location-map-empty {
+  padding: 16px;
+  font-size: 14px;
+  color: #6b7280;
+}
+
+.location-map-footer {
+  padding: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.distance-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #eef4ff;
+  color: #1a73e8;
+  padding: 8px 14px;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.waze-btn{
+  &:hover{
+    background-color: #132845;
+  }
+  font-family: inherit;
+  cursor: pointer;
+  background-color: var(--navy-deep);
+  color: white;
+  border-radius: 5px;
+  padding: 9px 10px;
+  margin-top: 5px;
+  border: none;
+  border: 1px;
+  font-size: 0.9rem;
+  margin-right: 5px;
+}

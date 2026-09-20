@@ -1,6 +1,6 @@
 import Header from '../components/Header';
 import HowItWorks from '../components/HowItWorks';
-import PropertiesPage from '../components/PropertiesPage';
+import HomePropertiesPage from '../components/HomePropertiesPage';
 import WhyChooseUs from '../components/WhyChooseUs';
 import ContactUs from '../components/ContactUs';
 import Footer from '../components/Footer';
@@ -10,10 +10,10 @@ import Hero from '../components/Hero';
 const HomePage = () => {
   return (
     <>
-      <Header />
+      <Header existNavBar={true} existButton={true}/>
       <Hero/>
       <HowItWorks/>
-      <PropertiesPage/>
+      <HomePropertiesPage/>
       <WhyChooseUs/>
       <Reviews />
       <ContactUs/>

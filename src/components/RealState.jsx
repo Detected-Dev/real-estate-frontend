@@ -1,4 +1,5 @@
 import React from 'react'
+import {Link} from "react-router-dom";
 
 const RealState = ({ property}) => {
   const {id,title,address,bedrooms,bathrooms,price,transaction_type,surface} = property 
@@ -21,7 +22,7 @@ const RealState = ({ property}) => {
                   <p>{price} Dh</p>
                 </div>  
                 <div>
-                  <a href='#a' className='action' onClick={() => console.log(property)}>more details</a>
+                  <Link to={`/properties/${property.id}`} className='action' onClick={() => console.log(property)}>more details</Link>
                 </div>
             </div>
             <div className='realSatate_status'>

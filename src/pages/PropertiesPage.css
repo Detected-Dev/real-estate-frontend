@@ -1,0 +1,234 @@
+  * { box-sizing: border-box; }
+ 
+  body {
+    margin: 0;
+    background: #f4f5f7;
+    color: #1f2937;
+    font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  }
+ 
+  /* header */
+  .site-header {
+    background: #10233f;
+    color: #fff;
+    padding: 18px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+ 
+  .brand {
+    font-size: 20px;
+    font-weight: 800;
+    letter-spacing: 0.3px;
+  }
+  .brand span { color: #c9973f; }
+ 
+  .user-chip {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 14px;
+  }
+ 
+  .avatar {
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    background: #c9973f;
+    color: #10233f;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 13px;
+  }
+ 
+  /* layout */
+  .props-page {
+    display: grid;
+    grid-template-columns: 260px 1fr;
+    gap: 32px;
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 32px 24px 80px;
+  }
+ 
+  /* sidebar */
+  .props-sidebar {
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 10px;
+    padding: 20px;
+    height: fit-content;
+  }
+ 
+  .sidebar-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+  }
+ 
+  .sidebar-head h2 {
+    font-size: 16px;
+    font-weight: 700;
+    margin: 0;
+    color: #10233f;
+  }
+ 
+  .reset-link {
+    background: none;
+    border: none;
+    color: #c9973f;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    padding: 0;
+  }
+ 
+  .filter-block { margin-bottom: 20px; }
+ 
+  .filter-block label {
+    display: block;
+    font-size: 12px;
+    font-weight: 600;
+    color: #6b7280;
+    margin-bottom: 8px;
+  }
+ 
+  .filter-block input,
+  .filter-block select {
+    width: 100%;
+    padding: 9px 10px;
+    border: 1px solid #e5e7eb;
+    border-radius: 7px;
+    font-size: 14px;
+    color: #1f2937;
+    background: #fff;
+    font-family: inherit;
+  }
+ 
+  .pill-group { display: flex; gap: 4px; flex-wrap: wrap; }
+ 
+  .pill {
+    padding: 7px 12px;
+    border-radius: 20px;
+    border: 1px solid #e5e7eb;
+    background: #fff;
+    font-size: 13px;
+    font-weight: 500;
+    color: #1f2937;
+    cursor: pointer;
+    font-family: inherit;
+  }
+ 
+  .pill.active {
+    background: #10233f;
+    border-color: #10233f;
+    color: #fff;
+  }
+ 
+  /* main */
+  .props-toolbar {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    margin-bottom: 20px;
+  }
+ 
+  .props-toolbar h1 {
+    font-size: 26px;
+    font-weight: 800;
+    color: #10233f;
+    margin: 0;
+  }
+ 
+  .result-count { font-size: 14px; color: #6b7280; }
+ 
+  .props-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+ 
+  @media (max-width: 1000px) {
+    .props-page { grid-template-columns: 1fr; }
+    .props-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+ 
+  @media (max-width: 640px) {
+    .props-grid { grid-template-columns: 1fr; }
+  }
+ 
+  /* card */
+  .p-card {
+    cursor: pointer;
+    display: block;
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 10px;
+    overflow: hidden;
+    text-decoration: none;
+    color: inherit;
+  }
+ 
+  .p-card-media {
+    position: relative;
+    aspect-ratio: 4 / 3;
+    background: linear-gradient(135deg, #e9ebee 0%, #dde1e6 100%);
+  }
+ 
+  .p-badge {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 12px;
+    font-weight: 700;
+    color: #fff;
+  }
+ 
+  .p-badge.rent { background: #10233f; }
+  .p-badge.sale { background: #c9973f; }
+ 
+  .p-card-body { padding: 14px 16px 18px; }
+ 
+  .p-card-body h3 {
+    font-size: 15px;
+    font-weight: 700;
+    margin: 0 0 6px;
+    color: #1f2937;
+    line-height: 1.3;
+  }
+ 
+  .p-card-location {
+    font-size: 13px;
+    color: #6b7280;
+    margin: 0 0 10px;
+  }
+ 
+  .p-card-meta {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 13px;
+    color: #6b7280;
+    margin-bottom: 12px;
+  }
+ 
+  .p-card-meta .dot { color: #e5e7eb; }
+ 
+  .p-card-price {
+    font-size: 17px;
+    font-weight: 800;
+    
+  }
+ 
+  .p-card-price span {
+    font-size: 13px;
+    font-weight: 500;
+    color: #6b7280;
+    margin-left: 4px;
+  }

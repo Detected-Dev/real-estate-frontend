@@ -48,19 +48,9 @@ export const AuthProvider = ({ children }) => {
         setClickProfile(false);
     }
 
-    // WEBSITE : 
-    const getProperties = async() => {
-        try{
-            const response = await api.get('/api/properties');
-            setProperties(response.data.data);
-        }catch(error){
-            console.log('FAiled fetching Properties')
-        }
-    }
 
     useEffect(()=> {
         getUser();
-        getProperties();
     },[])
 
     return (

@@ -2,26 +2,26 @@ import React from 'react'
 
 const ContactUs = () => {
   return (
-   <section class="contact-section">
+   <section className="contact-section">
 
    
-    <div class="contact-heading">
+    <div className="contact-heading">
         <h1>CONTACT US</h1>
         <p>Have questions? We’re here to help.</p>
     </div>
 
 
     
-    <div class="contact-wrapper">
+    <div className="contact-wrapper">
 
        
-        <div class="contact-left">
+        <div className="contact-left">
 
-            <div class="illustration">
+            <div className="illustration">
                 <img src="./contact.png" alt="CONTACT US"  width={800}/>
             </div>
 
-            <div class="talk-text">
+            <div className="talk-text">
                 <h2>Let’s talk!</h2>
 
                 <p>
@@ -34,15 +34,15 @@ const ContactUs = () => {
 
 
       
-        <div class="contact-right">
+        <div className="contact-right">
 
             <h2>Get in touch</h2>
 
 
             
-            <div class="contact-info">
+            <div className="contact-info">
 
-                <div class="contact-icon">
+                <div className="contact-icon">
                     📍
                 </div>
 
@@ -55,9 +55,9 @@ const ContactUs = () => {
 
 
            
-            <div class="contact-info">
+            <div className="contact-info">
 
-                <div class="contact-icon">
+                <div className="contact-icon">
                     ☎
                 </div>
 
@@ -70,9 +70,9 @@ const ContactUs = () => {
 
 
             
-            <div class="contact-info">
+            <div className="contact-info">
 
-                <div class="contact-icon">
+                <div className="contact-icon">
                     ✉
                 </div>
 
@@ -85,9 +85,9 @@ const ContactUs = () => {
 
 
             
-            <div class="contact-info">
+            <div className="contact-info">
 
-                <div class="contact-icon">
+                <div className="contact-icon">
                     ◷
                 </div>
 
@@ -99,15 +99,15 @@ const ContactUs = () => {
             </div>
 
 
-            <div class="separator"></div>
+            <div className="separator"></div>
 
 
          
-            <form class="contact-form">
+            <form className="contact-form">
 
-                <div class="form-row">
+                <div className="form-row">
 
-                    <div class="input-box">
+                    <div className="input-box">
 
                         <span>♙</span>
 
@@ -120,7 +120,7 @@ const ContactUs = () => {
                          </div>
 
 
-                    <div class="input-box">
+                    <div className="input-box">
 
                         <span>✉</span>
 
@@ -135,7 +135,7 @@ const ContactUs = () => {
                 </div>
 
 
-                <div class="message-box">
+                <div className="message-box">
 
                     <span>▢</span>
 
