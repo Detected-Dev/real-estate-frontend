@@ -1,8 +1,11 @@
 import React from "react";
 import Profile from "./Profile";
 import {Link} from "react-router-dom";
+import { useWebStates } from "../context/WebContext";
+import AddPropertyForm from "./AddPropertyForm";
 
 const Header = ({extraLogo,existNavBar,existButton}) => {
+  const {handleClick,setHandleClick} = useWebStates();
   return (
     <>
       <header>
@@ -15,17 +18,22 @@ const Header = ({extraLogo,existNavBar,existButton}) => {
         </p>
         {existNavBar && 
         <div className="links-header">
-          <a href="#acceuil">Accueil</a>
-          <a href="#services">Services</a>
+          <Link to={"/"}>Accueil</Link>
+          <Link to={"/properties"}>
+            Properties
+          </Link>
           <a href="#about">About us</a>
           <a href="#contact">Contact</a>
         </div>
         }
         <div className="profile_box">
-          {existButton && <button button className="btn-estimation">ESTIMATION</button>}
+          {existButton && <button button className="btn_add_property" onClick={() =>setHandleClick(prev => ({
+            ...prev , addProperty : true
+          }))}> + Add Propety</button>}
           <Profile/>
         </div>
       </header>
+        {handleClick.addProperty && <AddPropertyForm/>}
     </>
   );
 };

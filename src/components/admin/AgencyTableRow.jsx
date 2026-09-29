@@ -2,7 +2,6 @@ import React from "react";
 
 const AgencyTableRow = ({agency,setToggleActions}) => {
     const createdDate = new Date(agency.created_at);
-    console.log(agency)
   return (
     <tr >
       <td>{agency.id}</td>

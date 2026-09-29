@@ -5,35 +5,36 @@ const PropertyCard = ({ property }) => {
   const {
     id,
     title,
-    description,
     transaction_type,
     price,
     address,
     city,
-    postal_code,
     surface,
     bedrooms,
     bathrooms,
-    floors,
+    images
   } = property;
   return (
-    <div class="p-card" href="#" onClick={() => navigrate(`/properties/${id}`)}>
-      <div class="p-card-media">
-        <span class="p-badge rent">{transaction_type}</span>
+    <div className="p-card" href="#" onClick={() => navigrate(`/properties/${id}`)}>
+      <div className="p-card-media">
+        <img className="property-small-img" src={images.length > 0 
+          ? `http://localhost:8000/storage/${images[0].image_url}`
+          : `/not-found.jpg`} alt="" />
+        <span className="p-badge rent">{transaction_type}</span>
       </div>
-      <div class="p-card-body">
+      <div className="p-card-body">
         <h3>{title}</h3>
-        <p class="p-card-location">
+        <p className="p-card-location">
           {address}, {city}
         </p>
-        <div class="p-card-meta">
+        <div className="p-card-meta">
           <span>{bedrooms} Beds</span>
-          <span class="dot">·</span>
+          <span className="dot">·</span>
           <span>{bathrooms} Baths</span>
-          <span class="dot">·</span>
+          <span className="dot">·</span>
           <span>{surface} m²</span>
         </div>
-        <div class="p-card-price">
+        <div className="p-card-price">
           {price} MAD
           {transaction_type === "rent" ? <span>/ Month</span> : <span></span>}
         </div>

@@ -13,7 +13,6 @@ const HomePage = () => {
       <Header existNavBar={true} existButton={true}/>
       <Hero/>
       <HowItWorks/>
-      <HomePropertiesPage/>
       <WhyChooseUs/>
       <Reviews />
       <ContactUs/>

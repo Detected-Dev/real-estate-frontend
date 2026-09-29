@@ -1,0 +1,211 @@
+.visit-request-card {
+    background: white;
+    border-radius: 12px;
+    margin-top: 20px;
+    padding: 18px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+}
+
+/* Header */
+
+.visit-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    padding-bottom: 22px;
+    border-bottom: 1px solid #e5e9ef;
+    margin-bottom: 24px;
+}
+
+.visit-icon {
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    background: #eef5ff;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 21px;
+    img{
+        width: 23px;
+        height: 23px;
+    }
+}
+
+.visit-header h2 {
+    margin: 0 0 6px;
+
+    font-size: 20px;
+    color: #172d4f;
+}
+
+.visit-header p {
+    margin: 0;
+
+    font-size: 14px;
+    line-height: 1.5;
+    color: #718096;
+}
+
+/* Form */
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+
+    margin-bottom: 8px;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    color: #172d4f;
+}
+
+.form-group label span {
+    color: #dc3545;
+}
+
+.form-group label small {
+    font-weight: 400;
+    color: #7b8794;
+}
+
+/* Inputs */
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    box-sizing: border-box;
+
+    padding: 13px 14px;
+
+    border: 1px solid #dce3ec;
+    border-radius: 9px;
+
+    background: #fff;
+
+    font-size: 14px;
+    color: #26364d;
+
+    outline: none;
+
+    transition: 0.2s;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: #1d4ed8;
+
+    box-shadow: 0 0 0 3px rgba(29, 78, 216, 0.08);
+}
+
+.form-group textarea {
+    resize: none;
+    min-height: 110px;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: #98a3b3;
+}
+
+/* Submit */
+
+.visit-submit-btn {
+    width: 100%;
+
+    padding: 14px;
+
+    border: none;
+    border-radius: 8px;
+
+    background: #172f52;
+    color: white;
+
+    font-size: 15px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+.visit-submit-btn:hover {
+    background: #0f2544;
+}
+
+.visit-submit-btn:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+
+/* Info */
+
+.visit-info {
+    display: flex;
+    gap: 10px;
+
+    margin-top: 20px;
+    padding-top: 18px;
+
+    border-top: 1px solid #e5e9ef;
+}
+
+.visit-info span {
+    color: #718096;
+    font-size: 18px;
+}
+
+.visit-info p {
+    margin: 0;
+
+    font-size: 13px;
+    line-height: 1.5;
+
+    color: #718096;
+}
+
+.visit-request-form-status-pending{
+    position: absolute;
+    top: 15px;
+    right: 10px;
+    & p{
+        color: rgb(194, 111, 43);
+        padding: 5px 10px;
+        font-weight: 600;
+        font-size: 0.8rem;
+    }
+}
+.visit-request-form-status-accepted{
+    position: absolute;
+    top: 15px;
+    right: 10px;
+    & p{
+        color: rgb(47, 145, 9);
+        padding: 5px 10px;
+        font-weight: 600;
+        font-size: 0.8rem;
+    }
+}
+.make-offre{
+    width: 360px;
+    text-align: center;
+    padding: 14px;
+    margin-left: 30px;
+    border: none;
+    border-radius: 8px;
+    background: #459769;
+    color: white;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    display: block;
+}
+.hidden{
+    display: none;
+}

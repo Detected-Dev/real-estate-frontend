@@ -1,35 +1,49 @@
 import React, { useEffect, useState } from "react";
 import "./PropertyDetailsPage.css";
 import Header from "../components/Header";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import api from "../api/axios";
 import LocationMap from "../components/LocationMap"; // adjust the path to match where you saved it
+import VisitRequestForm from "../components/VisitRequestForm";
 
 const PropertyDetailsPage = () => {
   const [currentProperty, setCurrentProperty] = useState(null)
+  const [myVisit, setMyVisit] = useState(null)
   const dateForm = new Date();
 
   const {id} = useParams();
   
-    const getProperty = async() => {
-    try{
-      const response = await  api.get(`/api/properties/${id}`);
-      setCurrentProperty(response.data.data)
+  const getProperty = async() => {
+  try{
+    const response = await  api.get(`/api/properties/${id}`);
+    setCurrentProperty(response.data.data);
     }catch(erro){
         console.log('Failed Fetching Property')
     }
+  }
+
+  const getMyVisit = async() => {
+    try{
+      const response = await api.get(`/api/properties/${id}/my-visit`);
+      response.data.data && setMyVisit(response.data.data);
+    }catch(erro){
+        console.log('Failed Fetching Property')
     }
+  }
+
+    
   useEffect(() => {
     getProperty();
+    getMyVisit();
   },[id])
   if(!currentProperty)return <p>Loading ...</p>
   const {agency} = currentProperty;
   return (
     <>
-      <Header />
+      <Header  existNavBar={true} existButton={true}/>
       <div className="wrap">
         <div className="breadcrumb">
-          <a href="/properties">
+          <Link  to="/properties">
             <svg
               viewBox="0 0 24 24"
               fill="none"
@@ -38,8 +52,8 @@ const PropertyDetailsPage = () => {
             >
               <path d="M19 12H5M12 19l-7-7 7-7" />
             </svg>
-          </a>
-          <a href="/properties">Properties</a> / <span>Property</span>
+          </Link>
+          <Link to="/properties">Properties</Link> / <span>Property</span>
         </div>
 
         <div className="title-row">
@@ -59,15 +73,26 @@ const PropertyDetailsPage = () => {
             </div>
           </div>
           <div className="badges">
-            <span className="badge badge-txn">{currentProperty.transaction_type}</span>
-            <span className="badge badge-status">{currentProperty.status}</span>
+            <span className="badge badge-txn">{currentProperty.transaction_type.toUpperCase()}</span>
+            <span className="badge badge-status">{currentProperty.status.toUpperCase()}</span>
           </div>
         </div>
 
         <div className="gallery-grid">
-          <div className="cell main"></div>
-          <div className="cell" ></div>
+          <div className="cell main">
+            <img className="property-main-img" src={currentProperty.images.length > 0 
+          ? `http://localhost:8000/storage/${currentProperty.images[0].image_url}`
+          : `/not-found.jpg`} alt="" />
+          </div>
+          <div className="cell" >
+            <img className="property-main-img" src={currentProperty.images.length > 0 
+          ? `http://localhost:8000/storage/${currentProperty.images[1].image_url}`
+          : `/not-found.jpg`} alt="" />
+          </div>
           <div className="cell hide-mobile">
+            <img className="property-main-img" src={currentProperty.images.length > 0 
+          ? `http://localhost:8000/storage/${currentProperty.images[2].image_url}`
+          : `/not-found.jpg`} alt="" />
             <div className="gallery-count">View all photos</div>
           </div>
         </div>
@@ -233,7 +258,7 @@ const PropertyDetailsPage = () => {
                     </svg>
                     Postal Code
                   </td>
-                  <td>{currentProperty.postal_code}</td>
+                  <td>{currentProperty.postal_code ?? 'N/A'}</td>
                 </tr>
                 <tr>
                   <td>
@@ -268,27 +293,7 @@ const PropertyDetailsPage = () => {
 
           <aside>
             <div className="sticky-wrap">
-              <div className="card">
-                <div className="agency-top">
-                  <div className="agency-photo">{agency.name.slice(0,2).toUpperCase()}</div>
-                  <div>
-                    <div className="agency-name">{agency.name.toUpperCase()}</div>
-                    <div className="agency-role">Listing agency</div>
-                  </div>
-                </div>
-                <button className="btn btn-primary">Schedule a tour</button>
-                <button className="btn btn-secondary">Ask a question</button>
-                <div className="contact-fields">
-                  <input type="text" placeholder="Your name" />
-                  <input type="text" placeholder="Phone or email" />
-                  <textarea placeholder="I'd like to see this property on..."></textarea>
-                </div>
-                <button className="btn btn-primary">Send message</button>
-                <div className="agency-meta">
-                  <span>Direct</span>
-                  <a href="tel:+212522000000">{agency.telephone}</a>
-                </div>
-              </div>
+              <VisitRequestForm ownerId={currentProperty.owner_id} getMyVisit={getMyVisit} propertyId={currentProperty.id} myVisit={myVisit} agencyId={agency.id}/>
             </div>
           </aside>
         </div>
